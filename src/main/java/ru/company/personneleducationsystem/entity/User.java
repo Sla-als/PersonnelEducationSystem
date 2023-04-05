@@ -58,13 +58,24 @@ public class User implements JmixUserDetails, HasTimeZone {
     protected String timeZoneId;
 
     @JoinTable(name = "USER_CERTIFICATE_LINK",
-            joinColumns = @JoinColumn(name = "USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "CERTIFICATE_ID"))
+            joinColumns = @JoinColumn(name = "USER_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "CERTIFICATE_ID", referencedColumnName = "ID"))
     @ManyToMany
     private List<Certificate> certificate;
 
+    @Column(name = "TNUMBER")
+    private Integer tnumber;
+
     @Transient
     protected Collection<? extends GrantedAuthority> authorities;
+
+    public Integer getTnumber() {
+        return tnumber;
+    }
+
+    public void setTnumber(Integer tnumber) {
+        this.tnumber = tnumber;
+    }
 
     public void setCertificate(List<Certificate> certificate) {
         this.certificate = certificate;

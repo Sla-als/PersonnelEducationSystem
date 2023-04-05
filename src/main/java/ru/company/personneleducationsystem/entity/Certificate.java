@@ -1,10 +1,10 @@
 package ru.company.personneleducationsystem.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 @JmixEntity
@@ -13,6 +13,7 @@ import java.util.UUID;
 })
 @Entity
 public class Certificate {
+    @InstanceName
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
@@ -24,19 +25,6 @@ public class Certificate {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COURSE_ID")
     private Course course;
-    @JoinTable(name = "USER_CERTIFICATE_LINK",
-            joinColumns = @JoinColumn(name = "CERTIFICATE_ID"),
-            inverseJoinColumns = @JoinColumn(name = "USER_ID"))
-    @ManyToMany
-    private List<User> users;
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
     public Integer getGrade() {
         return grade;
