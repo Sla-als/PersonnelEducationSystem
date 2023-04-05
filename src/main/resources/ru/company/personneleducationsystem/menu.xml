@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://ru.company.personneleducationsystem/menu.application" insertBefore="administration" expanded="true">
+        <item screen="User.browse" caption="msg://ru.company.personneleducationsystem.screen.user/UserBrowse.caption"/>
+        <item screen="Certificate.browse"
+              caption="msg://ru.company.personneleducationsystem.screen.certificate/certificateBrowse.menu"/>
+        <item screen="Course.browse"
+              caption="msg://ru.company.personneleducationsystem.screen.course/courseBrowse.menu"/>
+        <item screen="Material.browse"
+              caption="msg://ru.company.personneleducationsystem.screen.material/materialBrowse.menu"/>
+        <item screen="Test.browse" caption="msg://ru.company.personneleducationsystem.screen.test/testBrowse.menu"/>
+    </menu>
+
+    <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+</menu-config>
