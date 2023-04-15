@@ -6,7 +6,6 @@
         <instance id="certificateDc"
                   class="ru.company.personneleducationsystem.entity.Certificate">
             <fetchPlan extends="_base">
-                <property name="user" fetchPlan="_base"/>
                 <property name="course" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
@@ -30,12 +29,6 @@
     <layout spacing="true" expand="editActions">
         <form id="form" dataContainer="certificateDc">
             <column width="350px">
-                <entityPicker id="userField" property="user">
-                    <actions>
-                        <action id="entityLookup" type="entity_lookup"/>
-                        <action id="entityClear" type="entity_clear"/>
-                    </actions>
-                </entityPicker>
                 <textField id="gradeField" property="grade"/>
                 <entityPicker id="courseField" property="course">
                     <actions>
